@@ -54,7 +54,7 @@ void print_all(polynomials poly)
 int degree(polynomials poly, int i)
 {
    // printf("Degree of polynomial %d : %d\n", coeff[begin[i - 1]]);
-   return coeff[begin[i - 1]];
+   return poly.coeff[poly.begin[i - 1]];
 }
 void add(polynomials* poly, int i, int j)
 {
@@ -63,14 +63,14 @@ void add(polynomials* poly, int i, int j)
     int k = 0;
     while(a <= poly->end[i] && b <= poly->end[j])
     {
-        if(poly->power[a] > poly.power[b])
+        if(poly->power[a] > poly->power[b])
         {
             poly->coeff[poly->begin[poly->count]+k] = poly->coeff[a];
             poly->power[poly->begin[poly->count]+k] = poly->power[a];
             k++;
             a++;
         }
-        else if(poly->power[b] < poly.power[b])
+        else if(poly->power[b] > poly->power[b])
         {
             poly->coeff[poly->begin[poly->count]+k] = poly->coeff[b];
             poly->power[poly->begin[poly->count]+k] = poly->power[b];
@@ -79,7 +79,7 @@ void add(polynomials* poly, int i, int j)
         }
         else
         {
-            poly->coeff[poly->begin[poly->count]+k] = poly->coeff[a] + poly.coeff[b];
+            poly->coeff[poly->begin[poly->count]+k] = poly->coeff[a] + poly->coeff[b];
             poly->power[poly->begin[poly->count]+k] = poly->power[a];
             k++;
             a++;
@@ -102,7 +102,7 @@ void add(polynomials* poly, int i, int j)
 
     poly->end[poly->count] = poly->begin[poly->count] + k - 1;
     poly->count ++;
-    poly->begin[count] = poly->end[poly->count - 1] + 1;
+    poly->begin[poly->count] = poly->end[poly->count - 1] + 1;
 
 
 }
