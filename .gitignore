@@ -1,0 +1,10 @@
+.vscode
+debug
+debug.out
+*.exe
+*.out
+*.dat 
+*.docx
+a
+*.html
+*.url
