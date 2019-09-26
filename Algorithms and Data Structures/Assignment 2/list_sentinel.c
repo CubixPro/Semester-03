@@ -1,13 +1,28 @@
 #include<stdio.h>
-#define null -1;
+#define null -1
 
 
 int list[1000];
 int head = 0;
 
+void display_list()
+{
+    for(int i = head; i < 1000 ; i++)
+    {
+        if(list[i] == null)
+            return ;
+        else
+        {
+            printf("%d ", list[i]);
+        }
+        
+    }
+}
+
 void add_element_end(int ele)
 {
-    for(int i = head ; i < 1000 ; i++)
+    int i;
+    for(i = head ; i < 1000 ; i++)
     {
         if(list[i] == null)
             break;
@@ -58,4 +73,14 @@ int del_element(int node)
         }
     }
     return del;
+}
+
+int main()
+{
+    list[0] = -1;
+    add_element_end(1);
+    add_element_end(2);
+    add_element_end(3);
+    del_element(2);
+    display_list();
 }
