@@ -44,6 +44,10 @@ int main()
     {
         switch (choice)
         {
+        case 6: fp = fopen("student.dat", "r"); 
+                fseek(fp, 2 * sizeof(student), 0);
+                printf("%d", ftell(fp));
+                break;
         case 0:
             fp = fopen("student.dat", "w");
             if (fp != NULL)

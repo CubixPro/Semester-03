@@ -75,6 +75,10 @@ int del_element(int node)
     return del;
 }
 
+class Transaction{
+
+};
+
 int main()
 {
     list[0] = -1;

@@ -11,12 +11,11 @@ public:
         this->size = size;
         str = new char[size];
     }
-    /*~STRING()
+    ~STRING()
     {
         if(str != NULL)
             delete(str);
-        str = NULL;
-    }*/
+    }
     friend ostream & operator<<(ostream &t, STRING &s)
     {
         for(int i = 0 ; i < s.size ; i++)
@@ -35,7 +34,7 @@ public:
         }
         return t;
     }
-    friend STRING operator+(STRING a, STRING b)
+    friend STRING operator+(STRING const a, STRING const b)
     {
         STRING c(a.size + b.size);
         for(int i = 0 ; i < a.size ; i++)
@@ -48,12 +47,20 @@ public:
         }
         return c;
     }
-    void operator=(STRING str)
+    void operator=(STRING const str)
     {
         this->size = str.size;
         for(int i = 0 ; i < size ; i++)
         {
             this->str[i] = str.str[i];
+        }
+    }
+    STRING(STRING const &s)
+    {
+        size = s.size;
+        for(int i = 0 ; i < size ; i++)
+        {
+            str[i] = s.str[i];
         }
     }
 };

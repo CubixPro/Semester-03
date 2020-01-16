@@ -8,7 +8,7 @@ int main()
     char str[1000];
     char enc[2000];
     unsigned long long int val=0;
-    scanf("%s", str);
+    gets(str);
     for(int i = 0 ; i < strlen(str) ; i++)
     {
         char ch = str[i];
