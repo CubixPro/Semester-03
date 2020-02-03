@@ -1,0 +1,71 @@
+import java.util.*;
+
+class myString{
+	int counta(String str){
+	int count = 0;
+		for(int i = 0 ; i < str.length() ; i++){
+			char ch = str.charAt(i);
+			if(ch == 'a')
+				count++;
+		}
+		return count;
+	}
+	
+	int countand(String str){
+		int count = 0;
+		for(int i = 0 ; i < str.length() - 2 ; i++){
+			String sub = str.substring(i, i + 3);
+			if(sub.equals("and") == true)
+				count++;
+				
+		}
+		return count;
+	}
+	
+	boolean startsWithThe(String str){
+		if(str.length() >= 3 && str.substring(0, 3).equals("The"))
+			return true;
+		else
+			return false;
+	}
+	
+	char[] putString(String str){
+		char arr[] = new char[str.length()];
+		for(int i = 0 ; i < str.length() ; i++){
+			arr[i] = str.charAt(i);
+		}
+		return arr;
+	}
+	
+	void tokenizer(String str){
+		str = str + ' ';
+		String newstr  = "";
+		for(int i = 0 ; i < str.length() ; i++){
+			char ch = newstr.charAt(i);
+			if(ch == ' ' || ch == '@' || ch == '.'){
+				System.out.println(newstr);
+				newstr = "";
+			}
+			newstr += ch;
+		}
+		}
+	
+	void run(){
+		String val;
+		Scanner sc = new Scanner(System.in);
+		val = sc.nextLine();
+		System.out.println(counta(val));
+		System.out.println(countand(val));
+		System.out.println(startsWithThe(val));
+		
+		char arr[] = putString(val);
+			
+	}
+	public static void main(String args[]){
+		myString s = new myString();
+		s.run();
+	}
+	
+}
+
+
