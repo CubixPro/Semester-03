@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+class Student{
+	int roll;
+	string name;
+	public:
+	double score;
+	public:
+	void input(){
+		cin >> roll;
+		cin >> name;
+		cin >> score;
+	}
+	string getName(){
+		return name;
+	}
+	void printStudent(){
+		cout << roll;
+		cout << name;
+		cout << score;
+	}
+	double getScore()
+	{
+	return score;
+	}
+	bool operator==(Student s){
+		if(roll == s.roll && name == s.name & score == s.score)
+			return true;
+		return false;
+	}
+	
+};
+bool operator>(Student sa, Student sb){
+		return (sa.getScore()>sb.getScore());
+	}	
+int main(){
+	priority_queue<Student, vector<Student>, greater<Student> > pq ;
+}
