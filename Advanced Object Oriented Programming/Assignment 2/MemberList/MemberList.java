@@ -1,4 +1,4 @@
-package Member;
+package MemberList;
 import java.io.BufferedReader;
 import java.util.*;
 import java.io.*;
